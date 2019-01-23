@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <title>Home</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            padding:0;
+            margin:0;
+            font-family: 'Roboto';
+            overflow:hidden;
+        }
+        body a{
+            text-decoration: none;
+            color:white;
+        }
+        #background{
+            position: absolute;
+            height:100%;
+            width:100%;
+            background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Vjkyj2hBg/abstract-purple-waves-flow-flat-animation-background_ezuuwjk_e__F0000.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position:center;
+            font-family: 'Roboto';
+            filter: blur(3px);
+            transform: scale(1.2,1.2);
+            z-index: -1000;
+        }
+        #background:after{
+            content:'';
+            position: absolute;
+            height:100%;
+            width:100%;
+            background-color:black;
+            opacity:.2;
+            z-index: -1000;
+        }
+        .bar{
+            height:80px;
+            width: 100%;
+            border-bottom:1px solid #e6e6e6;
+            line-height:80px;
+        }
+        .left-bar{
+            text-transform: uppercase;
+            font-weight: 600;
+            float:left;
+            padding: 0px 20px;
+        }
+        .right-bar{
+            float:right;
+            text-transform:uppercase;
+        }
+        .right-bar a{
+            padding:0px 20px;
+        }
+        .content{
+            color:white;
+        }
+        .content .bold-text{
+            text-transform: uppercase;
+            font-weight:bold;
+            font-size: 4em;
+            margin-top:200px;
+            margin-bottom:40px;
+        }
+        .content .inherit-text{
+            font-weight: 100;
+            font-size:1.4em;
+            text-transform: uppercase;
+            margin-bottom:40px;
+        }
+        .content .button{
+            margin:auto;
+            height: 60px;
+            width:100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content .button a{
+            border:2.5px solid #e6e6e6;
+            float: left;
+            line-height: 60px;
+            width:200px;
+            text-align: center;
+            border-radius:5px;
+            text-transform: uppercase;
+            font-size:1em;
+        }
+        .content .button a:nth-child(2){
+            margin-left:10px;
+            border:none;
+            background-color:orange;
+            border: 2.5px solid orange;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="background"></div>
+    <div class="bar">
+        <p class="left-bar"><a href="#">Home</a></p>
+        <p class="right-bar"><a href="#">Đăng nhập</a></p>
+        <p class="right-bar"><a href="#">Liên hệ</a></p>
+        <p class="right-bar"><a href="#">Tin tuyển dụng</a></p>
+    </div>
+    <div class="content">
+        <center><p class="bold-text">Tuyển dụng ngay bây giờ</p></center>
+        <center><p class="inherit-text">Tìm nhân viên phù hợp nhất cho công ty của bạn</p></center>
+        <div class="button">
+            <a href="{% url 'signup' %}">Đăng ký</a>
+            <a href="{% url 'signin' %}">Đăng nhập</a>
+        </div>
+    </div>
+</body>
+</html>
