@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {% load staticfiles %}
     <meta charset="utf-8" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <title>Home</title>
@@ -23,7 +24,7 @@
             position: absolute;
             height:100%;
             width:100%;
-            background-image: url('https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/Vjkyj2hBg/abstract-purple-waves-flow-flat-animation-background_ezuuwjk_e__F0000.png');
+            background-image: url('{% static 'image/background.png' %}');
             background-repeat: no-repeat;
             background-size: cover;
             background-position:center;
@@ -110,7 +111,7 @@
         <p class="left-bar"><a href="#">Home</a></p>
         <p class="right-bar"><a href="#">Đăng nhập</a></p>
         <p class="right-bar"><a href="#">Liên hệ</a></p>
-        <p class="right-bar"><a href="#">Tin tuyển dụng</a></p>
+        <p class="right-bar"><a href="{% url 'post' %}">Tin tuyển dụng</a></p>
     </div>
     <div class="content">
         <center><p class="bold-text">Tuyển dụng ngay bây giờ</p></center>

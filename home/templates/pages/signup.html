@@ -39,17 +39,21 @@
         form input{
             height:60px;
             padding:0px 10px 0px 10px;
-            border:1.5px solid #e9e9e9;
+            border:2px solid #bf44f5;
             border-radius:5px;
             margin-bottom:20px;
             font-size:1em;
         }
+        form input:focus {
+            outline:none;
+        }
         form input::placeholder{
-            color:#e9e9e9;
+            color:#bf44f5;
+            opacity:0.3;
         }
         form button{
             height:60px;
-            background-color:orange;
+            background-color:#bf44f5;
             border:none;
             border-radius:5px;
             color:white;
@@ -60,12 +64,13 @@
     </style>
 </head>
 <body>
-    <form action=".">
+    <form action=".", method="POST">
+        {% csrf_token %}
         <p>Đăng ký</p>
-        <input type="text" placeholder="Tài khoản">
-        <input type="password" placeholder="Mật khẩu">
-        <input type="password" placeholder="Mật lại khẩu">
-        <button>Đăng ký</button>
+        {{form.username}}
+        {{form.password1}}
+        {{form.password2}}
+        <button type="submit">Đăng ký</button>
     </form>
 </body>
 </html>
