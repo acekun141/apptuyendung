@@ -50,7 +50,7 @@ class SigninForm(forms.Form):
         max_length=100,
         widget=forms.PasswordInput(attrs={'placeholder':'Mật khẩu'})
     )
-    def clean(self):
+    def clean_password(self):
         user = authenticate(username = self.cleaned_data['username'], password = self.cleaned_data['password'])
         if not user:
             raise forms.ValidationError('Mật khẩu hoặc tài khoản không đúng')
