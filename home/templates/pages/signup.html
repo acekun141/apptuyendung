@@ -29,12 +29,18 @@
             border-radius: 5px;
             background-color:white;
         }
-        form p{
+        form .title{
             text-align: center;
             font-weight: 600;
             text-transform: uppercase;
             margin-bottom:20px;
             font-size:1.6em;
+        }
+        form .error{
+            text-align: center;
+            color:red;
+            font-size:1em;
+            margin:10px 0px 10px 0px;
         }
         form input{
             height:60px;
@@ -66,7 +72,14 @@
 <body>
     <form action=".", method="POST">
         {% csrf_token %}
-        <p>Đăng ký</p>
+        <p class="title">Đăng ký</p>
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <p class="error">{{error|escape}}</p>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
         {{form.username}}
         {{form.password1}}
         {{form.password2}}

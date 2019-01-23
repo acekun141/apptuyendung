@@ -18,6 +18,7 @@ def signin_view(request):
             user = authenticate(username = form.cleaned_data['username'], password = form.cleaned_data['password'])
             login(request, user)
             return HttpResponseRedirect("/")
+        return render(request, 'pages/signin.html', {'form':form})
     form = SigninForm()
     return render(request, 'pages/signin.html', {'form':form})
 
@@ -31,6 +32,7 @@ def signup_view(request):
             user = authenticate(username=username, password=password)
             login(request, user)
             return HttpResponseRedirect("/")
+        return render(request, 'pages/signup.html', {'form':form})
             
     form = RegistrationForm()
     return render(request, 'pages/signup.html', {'form':form})
