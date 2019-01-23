@@ -1,0 +1,81 @@
+{% extends 'pages/base.html' %}
+{% block style %}
+.profile{
+    width:100%;
+    padding:40px 0px;
+    background-color:white;
+    border-bottom:1px solid #e6e6e6;
+    box-shadow: 0 1px 7px rgba(0,0,0,.05);
+}
+.profile p{
+    margin-left:20px;
+    font-size:1.2em;
+    margin-bottom:10px;
+    
+}
+.profile .company{
+    text-transform:uppercase;
+    font-weight:600;
+    font-size:2em;
+    color:#bf44f5;
+}
+.profile .local{
+    margin-bottom:20px;
+}
+.container{
+    width:60vw;
+    padding:20px;
+    background:white;
+    box-shadow: 0 1px 7px rgba(0,0,0,.05);
+    margin:20px auto;
+    border-radius:10px;
+    border:1px solid #e6e6e6;
+}
+.container .company{
+    text-transform:uppercase;
+    font-size:2em;
+    font-weight:600;
+    color:#bf44f5;
+    margin-bottom:10px;
+}
+.container .local{
+    margin-bottom:30px;
+}
+.container .time{
+    font-size:1em;
+    color:gray;
+    margin-top:30px;
+}
+.container p{
+    margin-bottom:10px;
+    font-size:1.2em;
+}
+{% endblock %}
+{% block content %}
+
+<div class="profile">
+    <p class="company"><a href="#">Vietle</a></p>
+    <p class="local">01 Hoàng Đạo Thúy, Thanh Xuân, Hà Nội</p>
+    <p class="email"><strong>Email:</strong> example@gmail.com</p>
+    <p class="contact"><strong>Liên hệ:</strong> 0912345678</p>
+</div>
+<div class="container">
+    <p class="company">Vietle</p>
+    <p class="local">01 Hoàng Đạo Thúy, Thanh Xuân, Hà Nội</p>
+    <p><strong>Vị trí tuyển dụng: </strong>Thực tập</p>
+    <p><strong>Yêu cầu: </strong>Ham học hỏi, có khả năng làm việc với django</p>
+    <p><strong>Mô tả: </strong>Ta thường nghe: Kỷ Tín đem mình chết thay, cứu thoát cho Cao Đế; Do Vu chìa lưng chịu giáo, che chở cho Chiêu Vương; Dự Nhượng nuốt than, báo thù cho chủ; Thân Khoái chặt tay để cứu nạn cho nước. Kính Đức một chàng tuổi trẻ, thân phò Thái Tông thoát khỏi vòng vây Thái Sung; Cảo Khanh một bầy tôi xa, miệng mắng Lộc Sơn, không theo mưu kế nghịch tặc. Từ xưa các bậc trung thần nghĩa sĩ, bỏ mình vì nước, đời nào chẳng có? Ví thử mấy người đó cứ khư khư theo thói nhi nữ thường tình thì cũng đến chết hoài ở xó cửa, sao có thể lưu danh sử sách cùng trời đất muôn đời bất hủ được?</p>
+    <p class="salary"><strong>Lương: </strong>Thỏa thuận sau</p>
+    <p class="time">9:99 23/1/2019</p>
+</div>
+<div class="container">
+        <p class="company">Vietle</p>
+        <p class="local">01 Hoàng Đạo Thúy, Thanh Xuân, Hà Nội</p>
+        <p><strong>Vị trí tuyển dụng: </strong>Thực tập</p>
+        <p><strong>Yêu cầu: </strong>Ham học hỏi, có khả năng làm việc với django</p>
+        <p><strong>Mô tả: </strong>Ta thường nghe: Kỷ Tín đem mình chết thay, cứu thoát cho Cao Đế; Do Vu chìa lưng chịu giáo, che chở cho Chiêu Vương; Dự Nhượng nuốt than, báo thù cho chủ; Thân Khoái chặt tay để cứu nạn cho nước. Kính Đức một chàng tuổi trẻ, thân phò Thái Tông thoát khỏi vòng vây Thái Sung; Cảo Khanh một bầy tôi xa, miệng mắng Lộc Sơn, không theo mưu kế nghịch tặc. Từ xưa các bậc trung thần nghĩa sĩ, bỏ mình vì nước, đời nào chẳng có? Ví thử mấy người đó cứ khư khư theo thói nhi nữ thường tình thì cũng đến chết hoài ở xó cửa, sao có thể lưu danh sử sách cùng trời đất muôn đời bất hủ được?</p>
+        <p class="salary"><strong>Lương: </strong>Thỏa thuận sau</p>
+        <p class="time">9:99 23/1/2019</p>
+    </div>
+
+{% endblock %}

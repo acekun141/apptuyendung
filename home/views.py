@@ -36,3 +36,6 @@ def signup_view(request):
             
     form = RegistrationForm()
     return render(request, 'pages/signup.html', {'form':form})
+
+def profile(request):
+    return render(request, 'pages/profile.html')

@@ -1,91 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <style>
-        *{
-            padding: 0;
-            margin:0;    
-        }
-        body{
-            padding:0;
-            margin:0;
-            background-color:#fafafa;
-            font-family:'Roboto';
-        }
-        body a{
-            text-decoration:none;
-        }
-        .bar{
-            width:100%;
-            height:70px;
-            background-color:#bf44f5;
-            text-transform:uppercase;
-            margin-bottom:100px;
-        }
-        .bar p{
-            display:flex;
-            height: 70px;
-            align-items: center;
-            flex-direction: row;
-        }
-        .bar p a{
-            color:white;
-            line-height:50px;
-            padding:0px 20px 0px 20px;
-        }
-        .bar .left-bar{
-            float:left;
-            margin-left:20px;
-        }
-        .bar .right-bar{
-            float:right;
-        }
-        .right-bar a{
-            border-radius:25px;
-            margin-right:20px;
-            background-color:rgba(0, 0, 0, 0.3)
-        }
-        .left-bar a{
-            background-color:none;
-        }
-        .container{
-            width:60vw;
-            padding:20px;
-            background:white;
-            box-shadow: 0 1px 7px rgba(0,0,0,.05);
-            margin:20px auto;
-            border-radius:10px;
-            border:1px solid #e6e6e6;
-        }
-        .container .company{
-            text-transform:uppercase;
-            font-size:2em;
-            font-weight:600;
-            color:#bf44f5;
-            margin-bottom:10px;
-        }
-        .container .local{
-            margin-bottom:30px;
-        }
-        .container .time{
-            font-size:1em;
-            color:gray;
-            margin-top:30px;
-        }
-        .container p{
-            margin-bottom:10px;
-            font-size:1.2em;
-        }
-    </style>
-</head>
-<body>
-    <div class="bar">
-        <p class="left-bar"><a href="{% url 'home' %}">Home</a></p>
-        <p class="right-bar"><a href="#">Đăng xuất</a></p>
-        <p class="right-bar"><a href="#">Username</a></p>
+{% extends 'pages/base.html' %}
+{% block style %}
+.container{
+    width:60vw;
+    padding:20px;
+    background:white;
+    box-shadow: 0 1px 7px rgba(0,0,0,.05);
+    margin:20px auto;
+    border-radius:10px;
+    border:1px solid #e6e6e6;
+}
+.container .company{
+    text-transform:uppercase;
+    font-size:2em;
+    font-weight:600;
+    color:#bf44f5;
+    margin-bottom:10px;
+}
+.container .local{
+    margin-bottom:30px;
+}
+.container .time{
+    font-size:1em;
+    color:gray;
+    margin-top:30px;
+}
+.container p{
+    margin-bottom:10px;
+    font-size:1.2em;
+}
+{% endblock %}
+{% block content %}
+<div class="container">
+        <p class="company">Vietle</p>
+        <p class="local">01 Hoàng Đạo Thúy, Thanh Xuân, Hà Nội</p>
+        <p><strong>Vị trí tuyển dụng: </strong>Thực tập</p>
+        <p><strong>Yêu cầu: </strong>Ham học hỏi, có khả năng làm việc với django</p>
+        <p class="salary"><strong>Lương: </strong>Thỏa thuận sau</p>
+        <p class="time">9:99 23/1/2019</p>
     </div>
     <div class="container">
         <p class="company">Vietle</p>
@@ -95,13 +46,4 @@
         <p class="salary"><strong>Lương: </strong>Thỏa thuận sau</p>
         <p class="time">9:99 23/1/2019</p>
     </div>
-    <div class="container">
-            <p class="company">Vietle</p>
-            <p class="local">01 Hoàng Đạo Thúy, Thanh Xuân, Hà Nội</p>
-            <p><strong>Vị trí tuyển dụng: </strong>Thực tập</p>
-            <p><strong>Yêu cầu: </strong>Ham học hỏi, có khả năng làm việc với django</p>
-            <p class="salary"><strong>Lương: </strong>Thỏa thuận sau</p>
-            <p class="time">9:99 23/1/2019</p>
-        </div>
-</body>
-</html>
+{% endblock %}
