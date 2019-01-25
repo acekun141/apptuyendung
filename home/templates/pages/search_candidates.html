@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Tìm kiếm ứng viên </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-sm navbar-light justify-content-between">
+                        <div class="header-logo">
+                            <div class="img-logo">
+                                <a class="navbar-brand" href="#"><img src="" alt="Logo"></a>
+                            </div>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbars">
+                            <ul class="navbar-nav ml-auto ">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#">Trang chủ</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#">Khai báo thông tin</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">Tìm ứng viên</a>
+                                </li>
+                                <li class="nav-item dropdown ">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tin tuyển dụng</a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="">Đăng tin tuyển dụng</a></li>
+                                        <li><a href="">Hồ sơ ứng tuyển</a></li>
+                                        <li class="active"><a href="">Danh sách tin tuyển dụng</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tài khoản</a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li class="">
+                                            <a class="dropdown-info"><i>Mã NTD: <span class="text-primary"></span></i></a>
+                                        </li>
+                                        <li role="separator" class="dropdown-divider"></li>
+                                        <li><a href="">Thông tin cá nhân</a></li>
+                                        <li><a href="">Thông tin công ty</a></li>
+                                        <li><a href="">Đổi mật khẩu</a></li>
+                                        <li role="separator" class="dropdown-divider"></li>
+                                        <li><a href="">Thoát</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <main id="main" class="main">
+        <div class="container">
+            <div class="box">
+                <div class="box-body">
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="box-item form-group">
+                                    <p class="box_text"><i class="fas fa-user-circle"></i> Vị trí công việc</p>
+                                    <input type="text" class="ipt form-control" placeholder="Nhập tên vị trí bạn muốn tìm">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box-item form-group">
+                                    <p class="box_text"><i class="fas fa-map-marker-alt"></i> Địa điểm</p>
+                                    <select class="selectDrop" name="states[]" multiple="multiple">
+                                        <option>Hà Nội</option>
+                                        <option>TP Hồ Chí Minh</option>
+                                        <option>Bình Dương</option>
+                                        <option>Bắc Ninh</option>
+                                        <option>Đồng Nai</option>
+                                        <option>Hưng Yên</option>
+                                        <option>Hải Dương</option>
+                                        <option>Đà Nẵng</option>
+                                        <option>Hải Phòng</option>
+                                        <option>An Giang</option>
+                                        <option>Vũng Tàu</option>
+                                        <option>Bắc Giang</option>
+                                        <option>Bắc Kạn</option>
+                                        <option>Bạc Liêu</option>
+                                        <option>Bến Tre</option>
+                                        <option>Bình Định</option>
+                                        <option>Bình Phước</option>
+                                        <option>Bình Thuận</option>
+                                        <option>Cà Mau</option>
+                                        <option>Cần Thơ</option>
+                                        <option>Cao Bằng</option>
+                                        <option>ĐBS Cửu Long</option>
+                                        <option>Đăk Lăk</option>
+                                        <option>Đăk Nông</option>
+                                        <option>Điện Biên</option>
+                                        <option>Đồng Tháp</option>
+                                        <option>Gia Lai</option>
+                                        <option>Hà Giang</option>
+                                        <option>Hà Nam</option>
+                                        <option>Hà Tĩnh</option>
+                                        <option>Hậu Giang</option>
+                                        <option>Hoà Bình</option>
+                                        <option>Khánh Hòa</option>
+                                        <option>Kiên Giang</option>
+                                        <option>Kon Tum</option>
+                                        <option>Lai Châu</option>
+                                        <option>Lâm Đồng</option>
+                                        <option>Lạng Sơn</option>
+                                        <option>Lào Cai</option>
+                                        <option>Long An</option>
+                                        <option>Nam Định</option>
+                                        <option>Nghệ An</option>
+                                        <option>Ninh Bình</option>
+                                        <option>Ninh Thuận</option>
+                                        <option>Phú Thọ</option>
+                                        <option>Phú yên</option>
+                                        <option>Quảng Bình</option>
+                                        <option>Quảng Nam</option>
+                                        <option>Quảng Ngãi</option>
+                                        <option>Quảng Ninh</option>
+                                        <option>Quảng Trị</option>
+                                        <option>Sóc Trăng</option>
+                                        <option>Sơn La</option>
+                                        <option>Tây Ninh</option>
+                                        <option>Thái Bình</option>
+                                        <option>Thái Nguyên</option>
+                                        <option>Thanh Hóa</option>
+                                        <option>Huế</option>
+                                        <option>Tiền Giang</option>
+                                        <option>Trà Vinh</option>
+                                        <option>Tuyên Quang</option>
+                                        <option>Vĩnh Long</option>
+                                        <option>Vĩnh Phúc</option>
+                                        <option>Yên Bái</option>
+                                        <option>Ba Đình - Hà Nội</option>
+                                        <option>Bắc Từ Liêm - Hà Nội</option>
+                                        <option>Cầu Giấy - Hà Nội</option>
+                                        <option>Đống Đa - Hà Nội</option>
+                                        <option>Hà Đông - Hà Nội</option>
+                                        <option>Hai Bà Trưng - Hà Nội</option>
+                                        <option>Hoàn Kiếm - Hà Nội</option>
+                                        <option>Hoàng mai - Hà Nội</option>
+                                        <option>Long Biên - Hà Nội</option>
+                                        <option>Nam Từ Liêm - Hà Nội</option>
+                                        <option>Tây Hồ - Hà Nội</option>
+                                        <option>Thanh Xuân - Hà Nội</option>
+                                        <option>Ba Vì - Hà Nội</option>
+                                        <option>Chương Mỹ - Hà Nội</option>
+                                        <option>Đan Phượng - Hà Nội</option>
+                                        <option>Đông Anh - Hà Nội</option>
+                                        <option>Gia Lâm - Hà Nội</option>
+                                        <option>Hoài Đức - Hà Nội</option>
+                                        <option>Mê Linh - Hà Nội</option>
+                                        <option>Mỹ Đức - Hà Nội</option>
+                                        <option>Phú Xuyên - Hà Nội</option>
+                                        <option>Phúc Thọ - Hà Nội</option>
+                                        <option>Quốc Oai - Hà Nội</option>
+                                        <option>Sóc Sơn - Hà Nội</option>
+                                        <option>Thạch Thất - Hà Nội</option>
+                                        <option>Thanh Oai - Hà Nội</option>
+                                        <option>Thanh Trì - Hà Nội</option>
+                                        <option>Thường Tín - Hà Nội</option>
+                                        <option>Ứng Hòa - Hà Nội</option>
+                                        <option>Quận 1 - TP HCM</option>
+                                        <option>Quận 2 - TP HCM</option>
+                                        <option>Quận 3 - TP HCM</option>
+                                        <option>Quận 4 - TP HCM</option>
+                                        <option>Quận 5 - TP HCM</option>
+                                        <option>Quận 6 - TP HCM</option>
+                                        <option>Quận 7 - TP HCM</option>
+                                        <option>Quận 8 - TP HCM</option>
+                                        <option>Quận 9 - TP HCM</option>
+                                        <option>Quận 10 - TP HCM</option>
+                                        <option>Quận 11 - TP HCM</option>
+                                        <option>Quận 12 - TP HCM</option>
+                                        <option>Bình Tân - TP HCM</option>
+                                        <option>Bình Thạnh - TP HCM</option>
+                                        <option>Gò Vấp - TP HCM</option>
+                                        <option>Phú Nhuận - TP HCM</option>
+                                        <option>Tân Bình - TP HCM</option>
+                                        <option>Tân Phú - TP HCM</option>
+                                        <option>Thủ Đức - TP HCM</option>
+                                        <option>Bình Chánh - TP HCM</option>
+                                        <option>Cần Giờ - TP HCM</option>
+                                        <option>Củ Chi - TP HCM</option>
+                                        <option>Hóc Môn - TP HCM</option>
+                                        <option>Nhà Bè - TP HCM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3  order-md-0 order-sm-last order-xs-last">
+                                <div class="box-item form-group">
+                                    <p class="box_text fade sm-hidden"><i class="fas fa-search"></i>Tìm kiếm</p>
+                                    <button class="btn btn-custom btn-block"><i class="fa fa-search"></i> Tìm kiếm</button>
+                                </div>
+                            </div>
+                            <div class="col-md-5 ">
+                                <div class="box-item form-group">
+                                    <p class="box_text"><i class="fas fa-tools"></i>Chuyên môn</p>
+                                    <input type="text" class="ipt form-control" placeholder="Nhập chuyên môn bạn muốn tìm">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/select2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script>
+        $('.selectDrop').select2({
+            placeholder: 'Chọn một hoặc nhiều địa điểm...',
+            allowClear: true,
+        });
+
+    </script>
+</body>
+
+</html>

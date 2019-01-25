@@ -1,0 +1,107 @@
+#main {
+    .table {
+        background: #fff;
+        padding: 10px;
+        margin: 0;
+
+        .table_responsive {
+            #table {
+                width: 100%;
+                border: 1px solid #dee2e6;
+
+                thead {
+                    tr {
+                        th {
+                            border: 1px solid #dee2e6;
+                            text-align: center;
+                            text-transform: uppercase;
+                            background: #00bcd4;
+                            color: #fff;
+                            white-space: nowrap;
+                            font-size: 15px;
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        td {
+                            border: 1px solid #dee2e6;
+                            color: #444;
+                            max-width: 400px;
+                            word-wrap: break-word;
+
+                            .desc {
+                                margin: 0;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                            }
+
+                            .function {
+                                a {
+                                    color: #444;
+                                    cursor: pointer;
+                                    margin: 0 2px;
+
+                                    &:hover {
+                                        color: #00bcd4;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#See {
+    .modal-dialog {
+        .modal-content {
+            .modal-header {
+                background: #00bcd4;
+
+                .modal-title {
+                    color: #fff;
+                }
+
+                .close {
+                    color: #fff;
+                    opacity: .8;
+
+                    &:hover,
+                    &:focus {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .modal-body {}
+
+            .modal-footer {
+                button {
+                    min-width: 100px;
+                    border: none;
+
+                    &:hover {
+                        background: #00bcd4;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width:1199px) {
+    #main {
+        .table {
+            .table_responsive {
+                overflow: auto;
+            }
+        }
+    }
+}

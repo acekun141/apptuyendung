@@ -6,5 +6,8 @@ urlpatterns = [
     path('post/', views.post_view, name='post'),
     path('signin/', views.signin_view, name='signin'),
     path('signup/', views.signup_view, name='signup'),
-    path('profile/', views.profile, name="profile"),
+    path('logout/', views.logout_view, name="logout"),
+    path('infoform/', views.infoform, name='infoform'),
+    path('listpost/', views.listpost, name="listpost"),
+    path('newfeed/', views.newfeed, name="newfeed"),
 ]

@@ -1,0 +1,122 @@
+#main {
+    .login {
+        max-width: 370px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px;
+        background: #fff;
+        text-align: center;
+
+        .title_login {
+            font-size: 21px;
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .login_fb {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+
+            #btn-login-fb {
+                background: #3b5998;
+                color: #fff;
+                font-size: 15px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                flex-basis: 100%;
+                position: relative;
+                top: 0;
+                transition: all .3s ease;
+                box-shadow: none;
+
+                &:hover {
+                    top: -3px;
+                }
+
+                i {
+                    font-size: 30px;
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .login_email {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+
+            .form {
+                .title-form {
+                    color: #666;
+                    margin-bottom: 12px;
+                    font-size: 16px;
+                }
+
+                .box-form {
+                    .form-group {
+                        input {
+                            position: relative;
+                            top: 0;
+                            transition: all .5s ease;
+
+                            &:focus {
+                                top: -3px;
+                            }
+                        }
+
+                        ._box {
+                            .btn-login {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                width: 100%;
+                                margin-bottom: 20px;
+                                position: relative;
+                                top: 0;
+                                transition: all .5s ease;
+
+                                &:hover {
+                                    top: -3px;
+                                }
+                            }
+
+                            .forget-pass {
+                                color: #000;
+                                text-decoration: none;
+                                position: relative;
+                                transition: all .5s ease;
+                                top: 0;
+
+                                &:hover {
+                                    color: #00bcd4;
+                                    top: -3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .register {
+            .btn-register {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: #dd4b39;
+                color: #fff;
+                position: relative;
+                top: 0px;
+                transition: all .5s ease;
+
+                &:hover {
+                    top: -3px;
+                }
+            }
+        }
+    }
+}

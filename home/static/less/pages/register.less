@@ -1,0 +1,90 @@
+#main {
+    .login {
+        .login_email {
+            .form {
+                .box-form {
+                    .form-group {
+                        ._box {
+
+                            .rules,
+                            .type_account {
+                                text-align: left;
+                            }
+
+                            .type_account {
+                                .text-type {
+                                    margin-right: 50px;
+                                    cursor: pointer;
+
+                                    &:last-child {
+                                        margin: 0;
+                                    }
+                                }
+                            }
+
+                            .text_check {
+                                display: inline-block;
+                                text-align: left;
+                                position: relative;
+                                font-size: 15px;
+
+                                a {
+                                    color: #00bcd4;
+                                }
+
+                                .check_box {
+                                    width: 20px;
+                                    height: 20px;
+                                    display: inline-block;
+                                    position: relative;
+                                    border: 1px solid #ced4da;
+                                    margin-right: 5px;
+                                    border-radius: 3px;
+                                    cursor: pointer;
+                                    top: 3px;
+
+                                    i {
+                                        transform: scale(3) rotateZ(-20deg) translate(-50%, -50%);
+                                        opacity: 0;
+                                        transition: all .3s ease-in;
+                                        position: absolute;
+                                        font-size: .8em;
+                                        line-height: 0;
+                                        top: 50%;
+                                        left: 50%;
+
+                                        &:before {
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform: translate(-50%, -50%);
+                                        }
+                                    }
+
+                                    &.active {
+                                        i {
+                                            transform: unset;
+                                            opacity: 1;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btn-register {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .h_account {
+            .text {
+                a {
+                    color: #00bcd4;
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,5 @@
 django
+allauth
+extensions
+pyOpenSSL
+facebook-sdk

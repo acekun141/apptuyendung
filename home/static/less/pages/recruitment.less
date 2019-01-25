@@ -1,0 +1,109 @@
+#header {
+    .overlay {
+        background: rgba(50, 50, 50, .8);
+
+        .navbar {
+            #navbars {
+                .navbar-nav {
+                    .nav-item {
+                        &:hover {
+                            .nav-link {
+                                color: #ccc;
+                            }
+                        }
+
+                        .nav-link {
+                            color: #fff;
+
+                            &:before {
+                                background: #ccc;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .header-banner {
+            margin-top: 170px;
+            text-align: center;
+            color: #fff;
+
+            h1 {
+                margin-top: 0;
+                font-size: 40px;
+                font-weight: 300;
+            }
+
+            h2 {
+                margin-top: 30px;
+                font-size: 20px;
+                font-weight: 300;
+                color: #eee;
+                margin-bottom: 80px;
+            }
+
+            .action {
+                margin-bottom: 150px;
+
+                a {
+                    border-radius: 2px;
+                    padding: 12px 40px;
+                    margin: 0 5px;
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    letter-spacing: 2px;
+                    margin-bottom: 10px;
+                    width: 205px;
+                }
+            }
+        }
+    }
+}
+
+.companies {
+    background: #eee;
+    box-shadow: 0 1px 1px #ccc;
+
+    .comp-content {
+        padding: 0;
+        text-align: center;
+        margin: 0;
+
+        .comp-list {
+            display: inline-block;
+            text-decoration: none;
+            margin: 20px;
+
+            .comp-link {
+                img {
+                    max-height: 50px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 575px) {
+    #header {
+        padding: 10px 0 15px;
+
+        &.headerPages {
+            padding: 0;
+        }
+
+        .overlay {
+            padding-top: 10px;
+
+            .header-banner {
+                margin-top: 100px;
+
+                h1 {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}

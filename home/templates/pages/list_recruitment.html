@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Danh sách tin tuyển dụng </title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-sm navbar-light justify-content-between">
+                        <div class="header-logo">
+                            <div class="img-logo">
+                                <a class="navbar-brand" href="#"><img src="" alt="Logo"></a>
+                            </div>
+                        </div>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbars">
+                            <ul class="navbar-nav ml-auto ">
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="#">Khai báo thông tin</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#">Tìm ứng viên</a>
+                                </li>
+                                <li class="nav-item dropdown active">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tin tuyển dụng</a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li><a href="">Đăng tin tuyển dụng</a></li>
+                                        <li><a href="">Hồ sơ ứng tuyển</a></li>
+                                        <li class="active"><a href="">Danh sách tin tuyển dụng</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tài khoản</a>
+                                    <ul class="dropdown-menu dropdown-menu-right">
+                                        <li class="">
+                                            <a class="dropdown-info"><i>Mã NTD: <span class="text-primary"></span></i></a>
+                                        </li>
+                                        <li role="separator" class="dropdown-divider"></li>
+                                        <li><a href="">Thông tin cá nhân</a></li>
+                                        <li><a href="">Thông tin công ty</a></li>
+                                        <li><a href="">Đổi mật khẩu</a></li>
+                                        <li role="separator" class="dropdown-divider"></li>
+                                        <li><a href="">Thoát</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header><!-- /header -->
+    <main id="main" class="main">
+        <div class="container">
+            <div class="table">
+                <div class="table_responsive">
+                    <table id="table">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Tiêu đề</th>
+                                <th>Tên Người đăng</th>
+                                <th>Thời gian</th>
+                                <th>Mô tả</th>
+                                <th>Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <p class="desc" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusantium neque inventore, quo, maxime nihil. Numquam consectetur repudiandae nam omnis facere, qui id recusandae ut magnam, laboriosam at labore, suscipit." data-toggle="tooltip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusantium neque inventore, quo, maxime nihil. Numquam consectetur repudiandae nam omnis facere, qui id recusandae ut magnam, laboriosam at labore, suscipit.</p>
+                                </td>
+                                <td class="text-center">
+                                    <div class="function">
+                                        <a href="#" data-toggle="tooltip" title="Xem"><i class="far fa-eye"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+    </script>
+</body>
+
+</html>
