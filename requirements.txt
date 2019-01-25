@@ -1,5 +1,5 @@
 django
+facebook-sdk
 django-allauth
-extensions
 pyOpenSSL
 facebook-sdk
