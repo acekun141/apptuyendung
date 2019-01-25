@@ -55,6 +55,13 @@
                 <div class="login_email register_email">
                     <form class="form" action="" method="POST" accept-charset="utf-8">
                         {% csrf_token %}
+                        {% if form.errors %}
+                            {% for field in form %}
+                                {% for error in field.errors %}
+                                    <center><p>{{error|escape}}</p></center>
+                                {% endfor %}
+                            {% endfor %}
+                        {% endif %}
                         <h5 class="title-form">Sử dụng Email</h5>
                         <div class="box-form">
                             <div class="form-group row ">
