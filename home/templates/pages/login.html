@@ -55,6 +55,9 @@
                 <div class="login_email">
                     <form class="form" action="" method="POST" accept-charset="utf-8">
                         {% csrf_token %}
+                        {% if form.errors %}
+                            <p style="color:red">Tài khoản hoặc mật khẩu không hợp lệ!</p>
+                        {% endif %}        
                         <h5 class="title-form">Sử dụng Email</h5>
                         <div class="box-form">
                             <div class="form-group row ">

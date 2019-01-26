@@ -58,7 +58,7 @@
                         {% if form.errors %}
                             {% for field in form %}
                                 {% for error in field.errors %}
-                                    <center><p>{{error|escape}}</p></center>
+                                    <center><p style="color:red">{{error|escape}}</p></center>
                                 {% endfor %}
                             {% endfor %}
                         {% endif %}

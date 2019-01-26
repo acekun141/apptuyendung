@@ -69,12 +69,13 @@
     <main id="main" class="main">
         <div class="container">
             <div class="post">
-                {% for post in post %}
-                    <p>{{post.id}}</p>
-                    <p>{{post.title}}</p>
-                    <p>{{post.describe}}</p>
-                    <p>{{post.time}}</p>
-                {% endfor %}
+                <div class="row">
+                    {% for post in post %}
+                        <p>{{post.title}}</p>
+                        <p>{{post.describe}}</p>
+                        <p>{{post.time}}</p>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </main>

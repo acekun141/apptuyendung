@@ -36,7 +36,8 @@ class RegistrationForm(forms.Form):
     def save(self):
         User.objects.create_user(
             username = self.cleaned_data['username'],
-            password = self.cleaned_data['password1']
+            password = self.cleaned_data['password1'],
+            email = self.cleaned_data['username']
         )
 
 class SigninForm(forms.Form):

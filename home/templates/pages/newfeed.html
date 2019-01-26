@@ -31,6 +31,7 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbars">
                             <ul class="navbar-nav ml-auto ">
+                                {% if user.username %}
                                 <li class="nav-item ">
                                     <a class="nav-link" href="{% url 'home' %}">Trang chủ</a>
                                 </li>
@@ -58,6 +59,18 @@
                                         <li><a href="{% url 'logout' %}">Thoát</a></li>
                                     </ul>
                                 </li>
+                                {% else %}
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{% url 'home' %}">Trang chủ</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{% url 'signin' %}">Đăng nhập</a>
+                                </li>
+                                <li class="nav-item ">
+                                    <a class="nav-link" href="{% url 'signup' %}">Đăng ký</a>
+                                </li>
+                                
+                                {% endif %}
                             </ul>
                         </div>
                     </nav>
@@ -68,21 +81,25 @@
 
     <main id="main" class="main">
         <div class="container">
+            {% for post in post %}
+            {% for info in info %}
+            {% if info.username|stringformat:"s" == post.username|stringformat:"s" %}
             <div class="post">
-                {% for post in post %}
-                    {% for info in info %}
-                        {% if info.username|stringformat:"s" == post.username|stringformat:"s" %}
-                            <p>{{info.company}}</p>
-                            <p>{{info.local}}</p>
-                            <p>{{info.email}}</p>
-                            <p>{{info.contact}}</p>
-                        {% endif %}
-                    {% endfor %}
-                    <p>{{post.title}}</p>
-                    <p>{{post.speciality}}</p>
-                    <p>{{post.time}}</p>
-                {% endfor %}
+                <p>{{info.company}}</p>
+                <p>{{info.local}}</p>
+            {% endif %}
+            {% endfor %}
+                <p>Tiêu đề: {{post.title}}</p>
+                <p>Chuyên ngành: {{post.speciality}}</p>
+                <p>Nơi làm việc: {{post.workplace}}</p>
+                <p>Số lượng tuyển dụng: {{post.amount}} người</p>
+                <p>Cấp bậc: {{post.rank}}</p>
+                <p>Kinh nghiệm: {{post.exp}}</p>
+                <p>Kĩ năng: {{post.skill}}</p>
+                <p>Hạn chót nộp hồ sơ: {{post.deadline}}</p>
+                <p>{{post.time}}</p>
             </div>
+            {% endfor %}  
         </div>
     </main>
     <footer id="footer" class="footer" style="height: 800px; background: #000;">
