@@ -69,13 +69,13 @@
     <main id="main" class="main">
         <div class="container">
             <div class="post">
-                <div class="row">
-                    {% for post in post %}
-                        <p>{{post.title}}</p>
-                        <p>{{post.describe}}</p>
-                        <p>{{post.time}}</p>
-                    {% endfor %}
-                </div>
+                <table>
+                    <tr>
+                        <th>Tiêu đề</th>
+                        <th>Nội dung</th>
+                        <th>Thời gian nộp hồ sơ</th>
+                    </tr>
+                </table>
             </div>
         </div>
     </main>

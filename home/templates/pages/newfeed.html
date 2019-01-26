@@ -41,8 +41,8 @@
                                 <li class="nav-item dropdown active">
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tin tuyển dụng</a>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li class="active"><a href="">Đăng tin tuyển dụng</a></li>
-                                        <li class=""><a href="">Danh sách tin tuyển dụng</a></li>
+                                        <li><a href="{% url 'post' %}">Đăng tin tuyển dụng</a></li>
+                                        <li class="active"><a href="{% url 'newfeed' %}">Danh sách tin tuyển dụng</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
@@ -84,20 +84,20 @@
             {% for post in post %}
             {% for info in info %}
             {% if info.username|stringformat:"s" == post.username|stringformat:"s" %}
-            <div class="post">
-                <p>{{info.company}}</p>
-                <p>{{info.local}}</p>
+            <div class="post" style="background-color:white; padding:20px; margin-bottom:20px; border-radius:5px;">
+                <p style="color:blue; font-size:2em; text-transform:uppercase; margin:0; padding:0;">{{info.company}}</p>
+                <p style="font-size:1em; margin-bottom:30px">{{info.local}}</p>
             {% endif %}
             {% endfor %}
-                <p>Tiêu đề: {{post.title}}</p>
-                <p>Chuyên ngành: {{post.speciality}}</p>
-                <p>Nơi làm việc: {{post.workplace}}</p>
-                <p>Số lượng tuyển dụng: {{post.amount}} người</p>
-                <p>Cấp bậc: {{post.rank}}</p>
-                <p>Kinh nghiệm: {{post.exp}}</p>
-                <p>Kĩ năng: {{post.skill}}</p>
-                <p>Hạn chót nộp hồ sơ: {{post.deadline}}</p>
-                <p>{{post.time}}</p>
+                <p><strong>Tiêu đề: </strong>{{post.title}}</p>
+                <p><strong>Chuyên ngành: </strong>{{post.speciality}}</p>
+                <p><strong>Nơi làm việc: </strong>{{post.workplace}}</p>
+                <p><strong>Số lượng tuyển dụng: </strong>{{post.amount}} người</p>
+                <p><strong>Cấp bậc: </strong>{{post.rank}}</p>
+                <p><strong>Kinh nghiệm: </strong>{{post.exp}}</p>
+                <p><strong>Kĩ năng: </strong>{{post.skill}}</p>
+                <p><strong>Hạn chót nộp hồ sơ: </strong>{{post.deadline}}</p>
+                <p style="font-size:.9em; color:orange">{{post.time}}</p>
             </div>
             {% endfor %}  
         </div>

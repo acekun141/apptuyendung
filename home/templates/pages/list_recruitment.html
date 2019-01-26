@@ -2,14 +2,15 @@
 <html lang="en">
 
 <head>
+    {% load staticfiles %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Danh sách tin tuyển dụng </title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <title> Đăng tin tuyển dụng </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 
 <body>
@@ -29,29 +30,22 @@
                         <div class="collapse navbar-collapse" id="navbars">
                             <ul class="navbar-nav ml-auto ">
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="#">Khai báo thông tin</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#">Tìm ứng viên</a>
+                                    <a class="nav-link" href="{% url 'infoform' %}">Khai báo thông tin</a>
                                 </li>
                                 <li class="nav-item dropdown active">
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tin tuyển dụng</a>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="">Đăng tin tuyển dụng</a></li>
-                                        <li><a href="">Hồ sơ ứng tuyển</a></li>
-                                        <li class="active"><a href="">Danh sách tin tuyển dụng</a></li>
+                                        <li><a href="{% url 'post' %}">Đăng tin tuyển dụng</a></li>
+                                        <li><a href="{% url 'newfeed' %}">Danh sách tin tuyển dụng</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tài khoản</a>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li class="">
-                                            <a class="dropdown-info"><i>Mã NTD: <span class="text-primary"></span></i></a>
+                                            <a class="dropdown-info" href="{% url 'listpost' %}"><i><span class="text-primary">{{user.username}}</span></i></a>
                                         </li>
                                         <li role="separator" class="dropdown-divider"></li>
-                                        <li><a href="">Thông tin cá nhân</a></li>
-                                        <li><a href="">Thông tin công ty</a></li>
-                                        <li><a href="">Đổi mật khẩu</a></li>
                                         <li role="separator" class="dropdown-divider"></li>
                                         <li><a href="">Thoát</a></li>
                                     </ul>
@@ -70,29 +64,27 @@
                     <table id="table">
                         <thead>
                             <tr>
-                                <th>STT</th>
                                 <th>Tiêu đề</th>
                                 <th>Tên Người đăng</th>
                                 <th>Thời gian</th>
-                                <th>Mô tả</th>
-                                <th>Chức năng</th>
+                                <th>Mô tả công việc</th>
+                                <th>Hạn chót nộp hồ sơ</th>
                             </tr>
                         </thead>
                         <tbody>
+                            {% for post in post %}
                             <tr>
-                                <td class="text-center">1</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td class="text-center">{{post.title}}</td>
+                                <td class="text-center">{{post.name}}</td>
+                                <td class="text-center">{{post.time}}</td>
                                 <td>
-                                    <p class="desc" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusantium neque inventore, quo, maxime nihil. Numquam consectetur repudiandae nam omnis facere, qui id recusandae ut magnam, laboriosam at labore, suscipit." data-toggle="tooltip">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse accusantium neque inventore, quo, maxime nihil. Numquam consectetur repudiandae nam omnis facere, qui id recusandae ut magnam, laboriosam at labore, suscipit.</p>
+                                    <p class="desc" title="{{post.describe}}" data-toggle="tooltip">{{post.describe}}</p>
                                 </td>
                                 <td class="text-center">
-                                    <div class="function">
-                                        <a href="#" data-toggle="tooltip" title="Xem"><i class="far fa-eye"></i></a>
-                                    </div>
+                                    {{post.deadline}}
                                 </td>
                             </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -100,9 +92,9 @@
         </div>
     </main>
 
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script>
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();

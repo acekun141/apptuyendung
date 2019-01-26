@@ -105,9 +105,12 @@ def post_view(request):
 
 
 def listpost(request):
-    info = InfomationEnterprise.objects.get(username = request.user.username)
-    post = info.post_set.all()
-    return render(request, 'pages/listpost.html', {'post':post})
+    if request.user.username:
+        info = InfomationEnterprise.objects.get(username = request.user.username)
+        post = info.post_set.all().order_by('-time')
+        return render(request, 'pages/list_recruitment.html', {'post':post})
+    else:
+        return HttpResponseRedirect("/")
 
 
 def newfeed(request):
