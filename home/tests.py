@@ -29,5 +29,5 @@ class TestPage(SimpleTestCase):
         self.assertEqual(signup.status_code, 200)
         self.assertEqual(post.status_code, 302)
         self.assertEqual(infoform.status_code, 302)
-        self.assertEqual(listpost.status_code, 200)
+        self.assertEqual(listpost.status_code, 302)
     
