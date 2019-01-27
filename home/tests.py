@@ -19,7 +19,7 @@ class TestPage(SimpleTestCase):
         self.assertEqual(listpost.status_code, 302)
     def test_view_url_by_name(self):
         homepage = self.client.get(reverse('home'))
-        signin = self.client.get(reverse('singin'))
+        signin = self.client.get(reverse('signin'))
         signup = self.client.get(reverse('signup'))
         post = self.client.get(reverse('post'))
         infoform = self.client.get(reverse('infoform'))
