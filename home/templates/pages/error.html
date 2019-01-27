@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lỗi</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            padding:0;
+            margin:0;
+            background:#fafafa;
+            font-family: "Roboto";
+        }
+        .container{
+            position:absolute;
+            padding:20px;
+            background:white;
+            border-radius:5px;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+        }
+        .container h1{
+            color:red;
+            margin-bottom:20px;
+            text-align: center;
+            font-size:3em;
+            font-weight: 600;
+
+        }
+        .container p{
+            margin-bottom:20px;
+            font-size:1.5em;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lỗi 404</h1>
+        <p>Không tìm ra đường dẫn liên kết</p>
+        <center><a href="{% url 'home' %}">Quay lại trang chủ</a></center>
+    </div>
+</body>
+</html>

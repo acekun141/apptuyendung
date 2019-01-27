@@ -59,7 +59,7 @@ class Post(models.Model):
     name = models.CharField(max_length=100) # Tên người đăng tin
     email = models.EmailField() 
     contact = models.CharField(max_length=100)
-    des_of_company = models.TextField(max_length=255) # Mô tả về công ty
+    des_of_company = models.TextField(max_length=255,blank=True) # Mô tả về công ty
     describe = models.TextField() # Mô tả về công việc
     require = models.TextField() # Yêu cầu
     benefit = models.TextField(default='') # Quyền lợi của ứng viên

@@ -281,6 +281,7 @@ class PostForm(forms.Form):
         max_length=100
     )
     des_of_company = forms.CharField(
+        required = False,
         widget=forms.Textarea(
             attrs={
                 'class':"form-control hasGuide",

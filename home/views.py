@@ -85,6 +85,8 @@ def post_view(request):
             email = form.cleaned_data['email']
             contact = form.cleaned_data['contact']
             des_of_company = form.cleaned_data['des_of_company']
+            if des_of_company == "":
+                des_of_company = info.describe
             describe = form.cleaned_data['describe']
             require = form.cleaned_data['require']
             benefit = form.cleaned_data['benefit']
@@ -92,13 +94,13 @@ def post_view(request):
             info.post_set.create(title = title,speciality=speciality,workplace=workplace,amount=amount,rank=rank,worktime=worktime,sex=sex,exp=exp,salary=salary,deadline=deadline,name=name,email=email,contact=contact,des_of_company=des_of_company,describe=describe,require=require,benefit=benefit,skill=skill)
         else:
             print(form.errors)
-            return render(request, 'pages/post.html', {'form':form})
+            return render(request, 'pages/postform.html', {'form':form})
     if request.user.username:
         all_info = InfomationEnterprise.objects.all()
         for i in all_info:
             if i.username == request.user.username:
                 form = PostForm()
-                return render(request, 'pages/post.html', {'form':form})
+                return render(request, 'pages/postform.html', {'form':form})
         return HttpResponseRedirect("/infoform")         
     else:
         return HttpResponseRedirect('/signin')
@@ -117,3 +119,12 @@ def newfeed(request):
     info = InfomationEnterprise.objects.all()
     post = Post.objects.all().order_by('-time')
     return render(request, 'pages/newfeed.html', {'info':info, 'post':post})
+
+
+def post(request, id):
+    info = InfomationEnterprise.objects.all()
+    post = Post.objects.get(id = id)
+    return render(request, 'pages/post.html', {'info':info,'post':post})
+
+def error(request):
+    return render(request, 'pages/error.html')

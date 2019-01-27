@@ -10,4 +10,5 @@ urlpatterns = [
     path('infoform/', views.infoform, name='infoform'),
     path('listpost/', views.listpost, name="listpost"),
     path('newfeed/', views.newfeed, name="newfeed"),
+    path('post/<int:id>/', views.post, name='singlepost'),
 ]

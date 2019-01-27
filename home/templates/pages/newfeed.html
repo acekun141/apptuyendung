@@ -85,7 +85,7 @@
             {% for info in info %}
             {% if info.username|stringformat:"s" == post.username|stringformat:"s" %}
             <div class="post" style="background-color:white; padding:20px; margin-bottom:20px; border-radius:5px;">
-                <p style="color:blue; font-size:2em; text-transform:uppercase; margin:0; padding:0;">{{info.company}}</p>
+                <p style="color:blue; font-size:2em; text-transform:uppercase; margin:0; padding:0;"><a href="{% url 'singlepost' post.id %}">{{info.company}}</a></p>
                 <p style="font-size:1em; margin-bottom:30px">{{info.local}}</p>
             {% endif %}
             {% endfor %}

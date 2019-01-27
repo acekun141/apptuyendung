@@ -31,7 +31,6 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbars">
                             <ul class="navbar-nav ml-auto ">
-                                {% if user.username %}
                                 <li class="nav-item ">
                                     <a class="nav-link" href="{% url 'home' %}">Trang chủ</a>
                                 </li>
@@ -41,36 +40,21 @@
                                 <li class="nav-item dropdown active">
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tin tuyển dụng</a>
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="{% url 'post' %}">Đăng tin tuyển dụng</a></li>
-                                        <li class="active"><a href="{% url 'newfeed' %}">Danh sách tin tuyển dụng</a></li>
+                                        <li class="active"><a href="{% url 'post' %}">Đăng tin tuyển dụng</a></li>
+                                        <li class=""><a href="{% url 'newfeed' %}">Danh sách tin tuyển dụng</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tài khoản</a>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li class="">
-                                            <a class="dropdown-info"><i>Mã NTD: <span class="text-primary"></span></i></a>
+                                            <a class="dropdown-info" href="{% url 'listpost' %}"><i><span class="text-primary">{{user.username}}</span></i></a>
                                         </li>
                                         <li role="separator" class="dropdown-divider"></li>
-                                        <li><a href="">Thông tin cá nhân</a></li>
-                                        <li><a href="">Thông tin công ty</a></li>
-                                        <li><a href="">Đổi mật khẩu</a></li>
                                         <li role="separator" class="dropdown-divider"></li>
                                         <li><a href="{% url 'logout' %}">Thoát</a></li>
                                     </ul>
                                 </li>
-                                {% else %}
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="{% url 'home' %}">Trang chủ</a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="{% url 'signin' %}">Đăng nhập</a>
-                                </li>
-                                <li class="nav-item ">
-                                    <a class="nav-link" href="{% url 'signup' %}">Đăng ký</a>
-                                </li>
-                                
-                                {% endif %}
                             </ul>
                         </div>
                     </nav>
@@ -81,33 +65,142 @@
 
     <main id="main" class="main">
         <div class="container">
-            {% for info in info %}
-            {% if info.username|stringformat:"s" == post.username|stringformat:"s" %}
-            <div class="post" style="background-color:white; padding:20px; margin-bottom:20px; border-radius:5px;">
-                <p style="color:blue; font-size:2em; text-transform:uppercase; margin:0; padding:0;"><a href="{% url 'singlepost' post.id %}">{{info.company}}</a></p>
-                <p style="font-size:1em; margin-bottom:30px">{{info.local}}</p>
-            {% endif %}
-            {% endfor %}
-                <p><strong>Tiêu đề: </strong>{{post.title}}</p>
-                <p><strong>Chuyên ngành: </strong>{{post.speciality}}</p>
-                <p><strong>Nơi làm việc: </strong>{{post.workplace}}</p>
-                <p><strong>Số lượng tuyển dụng: </strong>{{post.amount}} người</p>
-                <p><strong>Cấp bậc: </strong>{{post.rank}}</p>
-                <p><strong>Loại làm việc: </strong>{{post.worktime}}</p>
-                <p><strong>Giới tính: </strong>{{post.sex}}</p>
-                <p><strong>Kinh nghiệm: </strong>{{post.exp}}</p>
-                <p><strong>Mức lương: </strong>{{post.salary}}</p><br>
-                <p><strong>Hạn chót nộp hồ sơ: </strong>{{post.deadline}}</p>
-                <p><strong>Tên người nhận hồ sơ: </strong>{{post.name}}</p>
-                <p><strong>Email: </strong>{{post.email}}</p>
-                <p><strong>Số điện thoại: </strong>{{post.contact}}</p>
-                <p><strong>Giới thiệu về công ty: </strong>{{post.des_of_company}}</p>
-                <p><strong>Mô tả công việc: </strong>{{post.describe}}</p>
-                <p><strong>Yêu cầu: </strong>{{post.require}}</p>
-                <p><strong>Quyền lợi của ứng viên: </strong>{{post.benefit}}</p>
-                <p><strong>Kĩ năng: </strong>{{post.skill}}</p>
-                
-                <p style="font-size:.9em; color:orange">{{post.time}}</p>
+            <div class="post">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div id="postLeft" class="main-form">
+                            <div class="head-form">
+                                <h4 class="title-form">Đăng tin tuyển dụng</h4>
+                            </div>
+                            <div class="body-form box ">
+                                <form class="post_form" action="." method="POST" accept-charset="utf-8">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="form-group col-sm-12">
+                                            <label for="" class="col-form-label">Tiêu đề</label>
+                                            {{form.title}}
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="" class="col-form-label">Chuyên ngành</label>
+                                            {{form.speciality}}
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Nơi làm việc</label>
+                                            <div class="box_item">
+                                            {{form.workplace}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Số lượng</label>
+                                            {{form.amount}}
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Cấp bậc</label>
+                                            <div class="box_item">
+                                                {{form.rank}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Loại làm việc</label>
+                                            <div class="box_item">
+                                                {{form.worktime}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Giới tính</label>
+                                            <div class="box_item">
+                                                {{form.sex}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Kinh nghiệm</label>
+                                            <div class="box_item">
+                                                {{form.exp}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Mức lương</label>
+                                            <div class="box_item">
+                                                {{form.salary}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Hạn chót nộp hồ sơ:</label>
+                                            {{form.deadline}}
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Tên người nhận hồ sơ:</label>
+                                            {{form.name}}
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Email nhận hồ sơ:</label>
+                                            {{form.email}}
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label for="" class="col-form-label">Điện thoại:</label>
+                                            {{form.contact}}
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="" class="col-form-label">Giới thiệu về công ty: <span class="red">(tối đa 255 ký tự)</span></label>
+                                            {{form.des_of_company}}
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="form-group col-sm-12">
+                                            <label for="" class="col-form-label">Mô tả công việc:</label>
+                                            {{form.describe}}
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="" class="col-form-label">Yêu cầu ứng viên:</label>
+                                            {{form.require}}
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="" class="col-form-label">Quyền lợi ứng viên:</label>
+                                            {{form.benefit}}
+                                        </div>
+                                        <div class="form-group col-sm-12">
+                                            <label for="" class="col-form-label">Kỹ năng:</label>
+                                            <div class="box_item">
+                                                {{form.skill}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12 f_custom">
+                                            <button type="submit" class="btn btn-custom btn-post">Đăng tin</button>
+                                            <a href="" class="btn _back">Quay lại trang quản lý</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 md-hidden">
+                        <div id="absoluteGuide">
+                            <div id="guide" class="main-form">
+                                <div class="guide-header head-form">
+                                    <h4 class="guide-title title-form">Hướng dẫn</h4>
+                                </div>
+                                <div class="guide-body body-form box">
+                                    <div class="guide-block">
+                                        <div class="guide-content">
+                                            <p id="guide-tips"></p>
+                                            <div class="guide-example">
+                                                <div id="example">
+                                                    <h4 class="example-title">Ví dụ:</h4>
+                                                    <div id="example-content">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
