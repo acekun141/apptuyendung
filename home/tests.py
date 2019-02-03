@@ -35,11 +35,6 @@ class TestPage(SimpleTestCase):
 class TestInfo(TestCase):
     def setUp(self):
         InfomationEnterprise.objects.create(company = "name_of_company", describe="describe_of_company")
-    
-    def test_company(self):
-        info = InfomationEnterprise.objects.get(id = 1)
-        expected_company = f'{info.company}'
-        self.assertEqual(expected_company, 'name_of_company')
 
     def test_describe(self):
         info = InfomationEnterprise.objects.get(id = 1)
