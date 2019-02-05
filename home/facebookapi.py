@@ -10,4 +10,4 @@ def facebook(company,local,title,speciality,workplace,amount,rank,worktime,sex,e
     for i in range(len(list2)):
         msg = msg + list2[i] + ":" + list1[i] + "\n"
     hashtag = "#tuyendungpython #pythonvietnam"
-    graph.put_object("504170536777582", "feed", message=msg+"\n"+hashtag)
+    graph.put_object("504170536777582", "feed", message=hashtag+"\n"+msg)

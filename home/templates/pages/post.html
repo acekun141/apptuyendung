@@ -49,14 +49,11 @@
                                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tài khoản</a>
                                     <ul class="dropdown-menu dropdown-menu-right">
                                         <li class="">
-                                            <a class="dropdown-info"><i>Mã NTD: <span class="text-primary"></span></i></a>
+                                            <a class="dropdown-info" href="{% url 'listpost' %}"><i><span class="text-primary">{{user.username}}</span></i></a>
                                         </li>
                                         <li role="separator" class="dropdown-divider"></li>
-                                        <li><a href="">Thông tin cá nhân</a></li>
-                                        <li><a href="">Thông tin công ty</a></li>
-                                        <li><a href="">Đổi mật khẩu</a></li>
                                         <li role="separator" class="dropdown-divider"></li>
-                                        <li><a href="{% url 'logout' %}">Thoát</a></li>
+                                        <li><a href="">Thoát</a></li>
                                     </ul>
                                 </li>
                                 {% else %}
