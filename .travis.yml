@@ -12,3 +12,8 @@ before_script:
 script: 
   - python manage.py migrate
   - python manage.py test
+
+notifications:
+  email:
+    - acekun141@gmail.com
+    - loitd@vnptepay.com.vn
