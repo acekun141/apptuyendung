@@ -2,7 +2,7 @@ def facebook(company,local,title,speciality,workplace,amount,rank,worktime,sex,e
     import facebook
 
     msg = ""
-    token = "EAAje2IAXV2oBAPLmZCzSwyZACC1XEosZCFhXzYvtlDZCEUKirZAo5XN5TRkoIqtCyxkzwtLpdejEy5FuoOmNxDOLo0AoG6ZCi0LZBfaoAxIXp0Yj9aiykoddi5DmYvvJA94TtxWbKmkjhvKmQxGuulmYXpVuduyxnZAZCEeCQrBg8mPj2UaG3NBnFG1oYxJEvoZCvjoqWoZBdyafQZDZD"
+    token = "EAAje2IAXV2oBAFPQZC6pcdT8ZBfpSl8L2SgqKRv7w3lyWSom00qWmIRrKrIQPbnFbbu8ZAtuPYURrAs3PaP55jYBqTAFqZBDeZCeTANaITLurjalkPTNClOJvNwG7KwpdEttBUorKN0xXX32bHGeJXiy9lJsEiZASvPZA3YEg1zx2niRQKQ51UmbazyLVT6wQm2NpmiDL439gZDZD"
     graph = facebook.GraphAPI(access_token=token)
     groups = graph.get_object("me/groups")
     list1 = [company,local,title,speciality,workplace,amount,rank,worktime,sex,exp,salary,deadline,name,email,contact,des_of_company,describe,require,benefit,skill]

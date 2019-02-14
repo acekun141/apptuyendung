@@ -4,7 +4,7 @@ python:
 services:
   - mysql
 env:
-  -DJANGO=2.1.4 DB=mysql
+  -DJANGO=2.1.4 DB=mysql HUNG=ABC
 install:
   - pip install -r requirements.txt
 before_script: 
