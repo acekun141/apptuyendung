@@ -50,7 +50,7 @@ class TestPost(TestCase):
     def test_title(self):
         post = Post.objects.get(id = 1)
         expected_title = f'{post.title}'
-        self.assertEqual(expected_title, 'title of usernamex')
+        self.assertEqual(expected_title, 'title of username1')
 
 
     
