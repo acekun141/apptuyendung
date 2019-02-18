@@ -2,7 +2,7 @@ language: python
 sudo: required
 dist: xenial
 python:
-  - "3.6"
+  - "2.7"
 env:
   - ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe ORACLE_SID=XE OCI_LIB_DIR=/u01/app/oracle/product/11.2.0/xe/lib LD_LIBRARY_PATH=/u01/app/oracle/product/11.2.0/xe/lib
 before_install:
