@@ -13,7 +13,8 @@ class TestPage(SimpleTestCase):
         post = self.client.get("/post/")
         infoform = self.client.get("/infoform/")
         listpost = self.client.get("/listpost/")
-        self.assertEqual(homepage.status_code,200)
+        if self.assertEqual(homepage.status_code,200):
+            print("Ngon")
         self.assertEqual(signin.status_code,200)
         self.assertEqual(signup.status_code,200)
         self.assertEqual(post.status_code, 302)
