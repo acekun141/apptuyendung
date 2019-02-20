@@ -92,7 +92,7 @@ def post_view(request):
             benefit = form.cleaned_data['benefit']
             skill = form.cleaned_data['skill']
             info.post_set.create(title = title,speciality=speciality,workplace=workplace,amount=amount,rank=rank,worktime=worktime,sex=sex,exp=exp,salary=salary,deadline=deadline,name=name,email=email,contact=contact,des_of_company=des_of_company,describe=describe,require=require,benefit=benefit,skill=skill)
-            #facebook(company,local,title,speciality,workplace,amount,rank,worktime,sex,exp,salary,deadline,name,email,contact,des_of_company,describe,require,benefit,skill)
+            facebook(company,local,title,speciality,workplace,amount,rank,worktime,sex,exp,salary,deadline,name,email,contact,des_of_company,describe,require,benefit,skill)
         else:
             print(form.errors)
             return render(request, 'pages/postform.html', {'form':form})
