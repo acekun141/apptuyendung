@@ -49,10 +49,6 @@
         <div class="container">
             <div class="login">
                 <h4 class="title_login">Đăng nhập để sử dụng</h4>
-                <div class="login_fb">
-                    {% load socialaccount %}
-                    <a href="{% provider_login_url 'facebook' %}" class="btn btn-primary" id="btn-login-fb"><i class="fab fa-facebook"></i> Đăng nhập bằng Facebook</a>
-                </div>
                 <div class="login_email">
                     <form class="form" action="" method="POST" accept-charset="utf-8">
                         {% csrf_token %}
@@ -87,9 +83,9 @@
             </div>
         </div>
     </main>
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 
 </html>
